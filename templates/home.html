@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-3">
+	<!-- Creating a row for news card -->
+	<div class="row">
+		<!-- Looping over each news in the news list -->
+		{% for news in news %}
+		<!-- Creating a column for each tnews card -->
+		<div class="col-sm-3">
+			<div class="card">
+				<!-- Adding news image -->
+				<img class="img-fluid" src="{% static 'img/ball.jpg' %}">
+				<div class="card-body">
+					<!-- Adding news title -->
+					<h5 class="card-title">{{ news.title }}</h5>
+					<p class="card-text">{{ news.shortContent }}</p>
+					<a class="card-link" href="{% url 'login' %}">Read more...</a>
+				</div>
+			</div>
+		</div>
+		<!-- if last column in row -->
+		{% if forloop.counter|divisibleby:4 and not forloop.last %}
+        </div><br><div class="row">
+        {% endif %}
+	  {% endfor %}
+	</div><br>
+		
+
+</div>
+
+
+{% endblock %} 
