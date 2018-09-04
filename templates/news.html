@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="{% static 'css/app.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-3">
+	<div class="row justify-content ml-auto">
+		<div class="col-sm-8">
+
+			<h2>{{ news.title }}</h2>
+			<br>
+			<p>{{ news.content }}</p>
+			
+		</div>
+		<div class="col-sm-4">
+			<div class="card bg-light text-dark" style="height: 400px">
+				<div class="card-body">
+					<h3 class="card-title">Recent Stories</h3>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+</div>
+
+
+{% endblock %}
